@@ -1,0 +1,16 @@
+app-root {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .loading-overlay{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+  }
