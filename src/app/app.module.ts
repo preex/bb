@@ -19,12 +19,13 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { SFE_ROUTES } from './routes';
 
-import { CompanyService } from './pages/company/company.service';
+import { CompanyService } from './service/company/company.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { EmpComponent } from './pages/emp/emp.component';
 import { CompanyListComponent } from './pages/company-list/company-list.component';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
+import { CompanyRegComponent } from './pages/company-reg/company-reg.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ContactListComponent } from './pages/contact-list/contact-list.componen
     ContactComponent,
     EmpComponent,
     CompanyListComponent,
-    ContactListComponent
+    ContactListComponent,
+    CompanyRegComponent
   ],
   imports: [
     BrowserModule,

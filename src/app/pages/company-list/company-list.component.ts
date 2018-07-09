@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Company } from './company';
-import { CompanyListService } from './company-list.service';
+import { Company } from '../../service/company/company';
+import { CompanyService } from '../../service/company/company.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-company-list',
@@ -9,21 +10,23 @@ import { CompanyListService } from './company-list.service';
 })
 export class CompanyListComponent implements OnInit {
   
-  HEROES: Company[] = [
-    { company_id: '11', company_name: 'Mr. Nice', address: '1' },
-    { company_id: '12', company_name: 'Narco' , address: '1'},
-    { company_id: '13', company_name: 'Bombasto', address: '1' }
-  ];
-
   companyList: Company[];
   
   ngOnInit() {
     this.getCompanyList();
   }
 
-  constructor(private companyService: CompanyListService) { }
+  constructor(private companyService: CompanyService, private router: Router) { }
 
   getCompanyList(): void {
     this.companyService.getCompanyList().subscribe(companyList => this.companyList = companyList);
+  }
+
+  moveDetail(id){
+    this.router.navigate(['company', id]).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
   }
 }

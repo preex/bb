@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Company } from './company';
-import { CompanyService } from './company.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Company } from '../../service/company/company';
+import { CompanyService } from '../../service/company/company.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-company',
@@ -10,14 +9,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
+  
+  companyId : string;
 
-  companyList: Company[];
+  company: Company;
 
-  constructor(private companyService: CompanyService ) { }
+  constructor(private route: ActivatedRoute,private companyService: CompanyService) { }
 
   ngOnInit() {
-   // this.getCompanyList();
+    this.getCompany();
   }
 
-  
+  getCompany(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+     
+    this.companyService.getCompany(id)
+      .subscribe(company => this.company = company);
+  }
+
 }

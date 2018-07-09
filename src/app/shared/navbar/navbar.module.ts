@@ -18,7 +18,7 @@ export class NavBarComponent  implements OnInit {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   
   constructor(  private _router: Router, private breakpointObserver: BreakpointObserver) {}
-
+  
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   ngOnInit() {
