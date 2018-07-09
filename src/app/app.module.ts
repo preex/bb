@@ -23,6 +23,9 @@ import { CompanyService } from './pages/company/company.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { EmpComponent } from './pages/emp/emp.component';
+import { CompanyListComponent } from './pages/company-list/company-list.component';
+import { ContactListComponent } from './pages/contact-list/contact-list.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { EmpComponent } from './pages/emp/emp.component';
     SfeComponent,
     CompanyComponent,
     ContactComponent,
-    EmpComponent
+    EmpComponent,
+    CompanyListComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
