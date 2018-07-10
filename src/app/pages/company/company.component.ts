@@ -9,12 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  
-  companyId : string;
+
+  companyId: string;
 
   company: Company;
 
-  constructor(private route: ActivatedRoute,private companyService: CompanyService) { }
+  constructor(private route: ActivatedRoute, private companyService: CompanyService) { }
 
   ngOnInit() {
     this.getCompany();
@@ -22,7 +22,7 @@ export class CompanyComponent implements OnInit {
 
   getCompany(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-     
+
     this.companyService.getCompany(id)
       .subscribe(company => this.company = company);
   }

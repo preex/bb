@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../../service/company/company';
 import { CompanyService } from '../../service/company/company.service';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-company-list',
@@ -9,9 +9,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent implements OnInit {
-  
+
   companyList: Company[];
-  
+
   ngOnInit() {
     this.getCompanyList();
   }
@@ -22,8 +22,16 @@ export class CompanyListComponent implements OnInit {
     this.companyService.getCompanyList().subscribe(companyList => this.companyList = companyList);
   }
 
-  moveDetail(id){
+  moveDetail(id) {
     this.router.navigate(['company', id]).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
+  }
+
+  moveCompanyReg(){
+    this.router.navigate(['companyReg']).then(nav => {
       console.log(nav); // true if navigation is successful
     }, err => {
       console.log(err) // when there's an error

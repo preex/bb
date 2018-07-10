@@ -9,7 +9,9 @@ import {
   MatGridListModule,
   MatToolbarModule,
   MatButtonModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatSelectModule,
+  MatDialogModule
 } from '@angular/material';
 
 // material 임포트용
@@ -23,7 +25,9 @@ import {
     MatGridListModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSelectModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }

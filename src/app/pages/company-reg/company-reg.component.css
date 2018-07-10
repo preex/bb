@@ -1,0 +1,7 @@
+.contents-wrapper > mat-form-field{
+    width:100%;
+}
+
+.btn-group button:nth-child(n+1) {
+    margin-left:5px;
+}

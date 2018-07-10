@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <input matInput placeholder="병원명">
+  </mat-form-field>
+[(value)]="selected2"
+  <mat-form-field>
+    <mat-select placeholder="시도" (selectionChange)="onSelect($event)" [(ngModel)]="sidoCd">
+      
+      <mat-option *ngFor="let sido of sidoList" [value]="sido.code">
+        {{sido.code_name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-select placeholder="시군구" [(ngModel)]="sgguCd" >
+      
+      <mat-option *ngFor="let sggu of filteredSgguList" [value]="sggu.code">
+        {{sggu.code_name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+</div>

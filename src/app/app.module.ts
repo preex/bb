@@ -26,6 +26,9 @@ import { EmpComponent } from './pages/emp/emp.component';
 import { CompanyListComponent } from './pages/company-list/company-list.component';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
 import { CompanyRegComponent } from './pages/company-reg/company-reg.component';
+import { HiraPopupComponent } from './pages/popup/hira-popup/hira-popup.component';
+import { HiraService } from './service/hira/hira.service';
+
 
 
 @NgModule({
@@ -37,7 +40,8 @@ import { CompanyRegComponent } from './pages/company-reg/company-reg.component';
     EmpComponent,
     CompanyListComponent,
     ContactListComponent,
-    CompanyRegComponent
+    CompanyRegComponent,
+    HiraPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,13 @@ import { CompanyRegComponent } from './pages/company-reg/company-reg.component';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [CompanyService],
-  bootstrap: [SfeComponent]
+  providers: [CompanyService, HiraService],
+  bootstrap: [SfeComponent],
+  entryComponents: [
+    HiraPopupComponent
+  ]
 })
 export class AppModule { }
+
+
+//Place components which are created dynamically to entryComponents under @NgModule decorator function.

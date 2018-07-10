@@ -1,0 +1,18 @@
+export const sido: Object[] =
+    [{ code: '110000', code_name: '서울' },
+    { code: '210000', code_name: '부산' },
+    { code: '220000', code_name: '인천' },
+    { code: '230000', code_name: '대구' },
+    { code: '240000', code_name: '광주' },
+    { code: '250000', code_name: '대전' },
+    { code: '260000', code_name: '울산' },
+    { code: '310000', code_name: '경기' },
+    { code: '320000', code_name: '강원' },
+    { code: '330000', code_name: '충북' },
+    { code: '340000', code_name: '충남' },
+    { code: '350000', code_name: '전북' },
+    { code: '360000', code_name: '전남' },
+    { code: '370000', code_name: '경북' },
+    { code: '380000', code_name: '경남' },
+    { code: '390000', code_name: '제주' },
+    { code: '410000', code_name: '세종시' }]
