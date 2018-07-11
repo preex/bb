@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { sido } from './sido';
 import { sggu } from './sggu';
+import { HiraService } from '../../../service/hira/hira.service';
 
 @Component({
   selector: 'app-hira-popup',
@@ -18,7 +19,7 @@ export class HiraPopupComponent implements OnInit {
   sgguList: Object[]
   filteredSgguList: Object[]
 
-  constructor(public dialogRef: MatDialogRef<HiraPopupComponent>) { }
+  constructor(public dialogRef: MatDialogRef<HiraPopupComponent>, private hiraService: HiraService) { }
 
   ngOnInit() {
     this.sidoList = sido;
@@ -32,6 +33,11 @@ export class HiraPopupComponent implements OnInit {
     } else {
       this.filteredSgguList = [];
     }
+  }
+  
+  searchHira(){
+
+    this.hiraService.getHiraList(this.sidoCd, this.sgguCd, '').subscribe(response => this.companyList = response);
   }
 
   onNoClick(): void {

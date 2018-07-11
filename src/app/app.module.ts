@@ -8,6 +8,8 @@ import { SfeComponent } from './sfe.component';
 
 import { MaterialModule } from './material.module';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 // shared
 import { NavbarModule } from './shared/navbar/navbar.module';
 
@@ -31,6 +33,7 @@ import { HiraService } from './service/hira/hira.service';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -46,6 +49,8 @@ import { HiraService } from './service/hira/hira.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     NavbarModule,
     RouterModule.forRoot(SFE_ROUTES),
     MaterialModule,
