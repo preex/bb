@@ -6,32 +6,32 @@ import { NotificationService } from "../../service/notification/notification.ser
 @Injectable()
 class ErrorHandler implements ErrorHandler {
 
-    constructor(private injector: Injector) { }
+    // constructor(private injector: Injector) { }
 
-    handleError(error: Error | HttpErrorResponse) {
+    // handleError(error: Error | HttpErrorResponse) {
 
-        const notificationService = this.injector.get(NotificationService);
-        const router = this.injector.get(Router);
+    //     const notificationService = this.injector.get(NotificationService);
+    //     const router = this.injector.get(Router);
 
-        if (error instanceof HttpErrorResponse) {
+    //     if (error instanceof HttpErrorResponse) {
         
-            // Server or connection error happened
-            if (!navigator.onLine) {
+    //         // Server or connection error happened
+    //         if (!navigator.onLine) {
         
-                // Handle offline error
-                return notificationService.notify('No Internet Connection');
-            } else {
+    //             // Handle offline error
+    //             return notificationService.notify('No Internet Connection');
+    //         } else {
         
-                // Handle Http Error (error.status === 403, 404...)
-                return notificationService.notify(`${error.status} - ${error.message}`);
-            }
-        } else {
+    //             // Handle Http Error (error.status === 403, 404...)
+    //             return notificationService.notify(`${error.status} - ${error.message}`);
+    //         }
+    //     } else {
         
-            // Handle Client Error (Angular Error, ReferenceError...)
-            router.navigate(['/error'], { queryParams: { error: error } });
-        }
+    //         // Handle Client Error (Angular Error, ReferenceError...)
+    //         router.navigate(['/error'], { queryParams: { error: error } });
+    //     }
         
-        // Log the error anyway
-        console.error('It happens: ', error);
-    }
+    //     // Log the error anyway
+    //     console.error('It happens: ', error);
+    // }
 }

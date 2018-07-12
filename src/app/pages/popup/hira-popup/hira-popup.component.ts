@@ -37,7 +37,7 @@ export class HiraPopupComponent implements OnInit {
   
   searchHira(){
 
-    this.hiraService.getHiraList(this.sidoCd, this.sgguCd, '').subscribe(response => this.companyList = response);
+    //this.hiraService.getHiraList(this.sidoCd, this.sgguCd, '').subscribe(response => this.companyList = response);
   }
 
   onNoClick(): void {

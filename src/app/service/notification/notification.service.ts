@@ -7,13 +7,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class NotificationService {
 
   
-  private _notification: BehaviorSubject<string> = new BehaviorSubject(null);
-  readonly notification$: Observable<string> = this._notification.asObservable().publish().refCount();
+  // private _notification: BehaviorSubject<string> = new BehaviorSubject(null);
+  // readonly notification$: Observable<string> = this._notification.asObservable().publish().refCount();
 
-  constructor() {}
+  // constructor() {}
 
-  notify(message) {
-    this._notification.next(message);
-    setTimeout(() => this._notification.next(null), 3000);
-  }
+  // notify(message) {
+  //   this._notification.next(message);
+  //   setTimeout(() => this._notification.next(null), 3000);
+  // }
 }
