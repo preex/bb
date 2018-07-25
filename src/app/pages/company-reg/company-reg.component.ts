@@ -19,16 +19,22 @@ export class CompanyRegComponent implements OnInit {
 
   openPickmeDialog(){
     const dialogRef = this.dialog.open(HiraPopupComponent, {
-      width: '250px',
+      panelClass: 'full-screen-dialog',
       data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed : ${result}');
     });
   }
 
   saveCompany(){
+
+
+
+
+
+    
     console.log('save company');
   }
 }

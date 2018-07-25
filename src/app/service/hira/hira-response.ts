@@ -1,10 +1,12 @@
 import { HiraItem } from "./hira-item";
 
-export class HiraResponse {
-    resultCode: string;
-    resultMsg: string;
+export interface HiraResponse {
     numOfRows: number;
     pageNo: number;
     totalCount: number;
-    Items: HiraItem[]
+    items: HiraItems;
+}
+
+export interface HiraItems {
+    item: HiraItem[];
 }

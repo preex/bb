@@ -1,32 +1,51 @@
-<h1 mat-dialog-title>{{ title }}</h1>
 
-<div mat-dialog-content>
+<div class="contents-wrapper">
 
-  <mat-form-field>
-    <input matInput placeholder="병원명">
-  </mat-form-field>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="onNoClick()">
+      <mat-icon class="fa fa-times fa-2x" ></mat-icon>
+    </button>
 
-  <mat-form-field>
-    <mat-select placeholder="시도" (selectionChange)="onSelect($event)" [(ngModel)]="sidoCd">
-      
-      <mat-option *ngFor="let sido of sidoList" [value]="sido.code">
-        {{sido.code_name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <h2 mat-dialog-title>{{ title }}</h2>
 
-  <mat-form-field >
-    <mat-select placeholder="시군구" [(ngModel)]="sgguCd" >
-      
-      <mat-option *ngFor="let sggu of filteredSgguList" [value]="sggu.code">
-        {{sggu.code_name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  </mat-toolbar>
 
-</div>
+  <div mat-dialog-content>
 
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="animal" cdkFocusInitial>Ok</button>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
+    <mat-form-field>
+      <input matInput placeholder="병원명" [(ngModel)]="yadmNm">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="시도" (selectionChange)="onSelect($event)" [(ngModel)]="sidoCd">
+        <mat-option *ngFor="let sido of sidoList" [value]="sido.code">
+          {{sido.code_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-select placeholder="시군구" [(ngModel)]="sgguCd" >
+        <mat-option *ngFor="let sggu of filteredSgguList" [value]="sggu.code">
+          {{sggu.code_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div>
+    <mat-list-item *ngFor="let item of itemList">
+      <mat-icon mat-list-icon>note</mat-icon>
+      <h4 mat-line>{{item.yadmNm}}</h4>
+      <p mat-line> {{item.clCdNm}} </p>
+    </mat-list-item>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="searchHospitalList()" cdkFocusInitial>Search</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-button [mat-dialog-close]="animal" cdkFocusInitial>Ok</button>
+  </div>
+
 </div>

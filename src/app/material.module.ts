@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { 
   MatCardModule,
   MatTableModule,
@@ -11,7 +10,9 @@ import {
   MatButtonModule,
   MatSidenavModule,
   MatSelectModule,
-  MatDialogModule
+  MatDialogModule,
+  MatListModule,
+  MatIconModule
 } from '@angular/material';
 
 // material 임포트용
@@ -27,7 +28,9 @@ import {
     MatButtonModule,
     MatSidenavModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule ,
+    MatListModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }

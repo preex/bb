@@ -10,6 +10,8 @@ import { MaterialModule } from './material.module';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import { FlexLayoutModule  } from '@angular/flex-layout';
+
 // shared
 import { NavbarModule } from './shared/navbar/navbar.module';
 
@@ -17,6 +19,8 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { ContactComponent } from './pages/contact/contact.component';
+
+
 
 import { RouterModule } from '@angular/router';
 import { SFE_ROUTES } from './routes';
@@ -29,8 +33,7 @@ import { CompanyListComponent } from './pages/company-list/company-list.componen
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
 import { CompanyRegComponent } from './pages/company-reg/company-reg.component';
 import { HiraPopupComponent } from './pages/popup/hira-popup/hira-popup.component';
-import { HiraService } from './service/hira/hira.service';
-
+import { HiraHospitalService } from './service/hira/hira-hospital.service';
 
 
 
@@ -54,9 +57,10 @@ import { HiraService } from './service/hira/hira.service';
     NavbarModule,
     RouterModule.forRoot(SFE_ROUTES),
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
-  providers: [CompanyService, HiraService],
+  providers: [CompanyService, HiraHospitalService],
   bootstrap: [SfeComponent],
   entryComponents: [
     HiraPopupComponent

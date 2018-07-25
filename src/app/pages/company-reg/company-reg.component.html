@@ -3,18 +3,34 @@
     <button mat-raised-button color="primary" class="new" (click)="openPickmeDialog()">Pick me</button>
     <button mat-raised-button color="primary" class="save" (click)="saveCompany()">Save</button>
   </div>
+  
+  <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+  
+    <mat-form-field fxFlex="50%">
+      <input matInput placeholder="name">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="50%">
+      <mat-select placeholder="코드">
+        <mat-option *ngFor="let clcd of clcdList" [value]="clcd.value">
+          {{clcd.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+
+    <mat-form-field fxFlex="50%">
+      <input matInput placeholder="ykiho" disabled>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="50%">
+      <input matInput placeholder="address">
+    </mat-form-field>
+  </div>
 
 
-  <mat-form-field>
-    <input matInput placeholder="Name">
-  </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="코드">
-      <mat-option *ngFor="let clcd of clcdList" [value]="clcd.value">
-        {{clcd.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
 
 </div>

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { sido } from './sido';
 import { sggu } from './sggu';
-import { HiraService } from '../../../service/hira/hira.service';
+import { HiraItem } from '../../../service/hira/hira-item';
+import { HiraRequest } from '../../../service/hira/hira-request';
+import { HiraHospitalService } from '../../../service/hira/hira-hospital.service';
 
 @Component({
   selector: 'app-hira-popup',
@@ -11,15 +13,18 @@ import { HiraService } from '../../../service/hira/hira.service';
 })
 export class HiraPopupComponent implements OnInit {
 
-  title: string = 'hira gazuaa'
-  sidoCd: string = ''
-  sgguCd: string = ''
+  title: string = 'hira gazuaa';
+  sidoCd: string = '';
+  sgguCd: string = '';
+  yadmNm: string = '';
+  sidoList: Object[];
+  sgguList: Object[];
+  filteredSgguList: Object[];
 
-  sidoList: Object[]
-  sgguList: Object[]
-  filteredSgguList: Object[]
+  
+  itemList: HiraItem[];
 
-  constructor(public dialogRef: MatDialogRef<HiraPopupComponent>, private hiraService: HiraService) { }
+  constructor(public dialogRef: MatDialogRef<HiraPopupComponent>, private hiraService: HiraHospitalService) { }
 
   ngOnInit() {
     this.sidoList = sido;
@@ -35,13 +40,16 @@ export class HiraPopupComponent implements OnInit {
     }
   }
   
-  searchHira(){
-
-    //this.hiraService.getHiraList(this.sidoCd, this.sgguCd, '').subscribe(response => this.companyList = response);
+  searchHospitalList(){
+    let params = new HiraRequest();
+    params.sgguCd = this.sgguCd;
+    params.sidoCd = this.sidoCd;
+    params.yadmNm = this.yadmNm;
+    
+    this.hiraService.getList(params).subscribe(response => this.itemList = response.items.item);
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

@@ -13,3 +13,6 @@
 .example-full-width{
     width:100%;
 }
+.contents-wrapper mat-card{
+    width:300px;
+}

@@ -16,7 +16,7 @@ class ErrorHandler implements ErrorHandler {
     //     if (error instanceof HttpErrorResponse) {
         
     //         // Server or connection error happened
-    //         if (!navigator.onLine) {
+    //         if (!navigator.onLine) {w
         
     //             // Handle offline error
     //             return notificationService.notify('No Internet Connection');

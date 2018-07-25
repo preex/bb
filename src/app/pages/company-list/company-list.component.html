@@ -16,24 +16,27 @@
     </mat-form-field>
   </form>
 
-  <mat-card *ngFor="let company of companyList" (click)="moveDetail(company.company_id)">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      
-      <mat-card-title>{{company.company_name}}</mat-card-title>
-      <mat-card-subtitle>{{company.clCdNm}}</mat-card-subtitle>
+  <div fxLayout="row wrap"  fxLayout.xs="column" fxFlexFill>
 
-    </mat-card-header>
- 
-    <mat-card-content>
-      <p>
-        {{company.addr}}
-      </p>
-    </mat-card-content>
-    
-    <!-- <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions> -->
-  </mat-card>
+    <mat-card *ngFor="let company of companyList" (click)="moveDetail(company.company_id)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        
+        <mat-card-title>{{company.company_name}}</mat-card-title>
+        <mat-card-subtitle>{{company.clCd}}</mat-card-subtitle>
+
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p>
+          {{company.address}}
+        </p>
+      </mat-card-content>
+      
+      <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+    </mat-card>
+  </div>
 </div>
