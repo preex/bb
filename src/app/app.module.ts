@@ -21,7 +21,6 @@ import { CompanyComponent } from './pages/company/company.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 
-
 import { RouterModule } from '@angular/router';
 import { SFE_ROUTES } from './routes';
 
